@@ -47,6 +47,8 @@ def wall_vert(x,y,z):
 # Pozycja pionka
 heigth = 16
 width = 3
+posittion = (16, 3)
+
 
 def clr():
         os.system('clear')
@@ -93,7 +95,7 @@ def game_over():
     )
 
 
-while q == 0:
+while q:
         user_input = getch.getch()
         user_input = user_input.lower()
         if user_input == "d":
@@ -102,20 +104,17 @@ while q == 0:
                 width += 1
                 realrows[heigth][width] = "#"
 
-
         if user_input == "a":
                 clr()
                 realrows[heigth][width] = " "
                 width -= 1
                 realrows[heigth][width] = "#"
 
-
         if user_input == "w":
                 clr()
                 realrows[heigth][width] = " "
                 heigth -= 1
                 realrows[heigth][width] = "#"
-
 
         if user_input == "s":
                 clr()
@@ -124,7 +123,7 @@ while q == 0:
                 realrows[heigth][width] = "#"
 
         if realrows[12][10] == "#":
-            q += 1
+            q = 0
             break
 
         else:
@@ -134,13 +133,18 @@ while q == 0:
 
 
 
-if q == 1:
+if not q:
     game_over()
 
 
 
 
 
+<<<<<<< HEAD
+=======
+print('dupa')
+print('pupa')
+>>>>>>> 11124dbcf10de566ee51460c5496170eeabce461
 
 
 
