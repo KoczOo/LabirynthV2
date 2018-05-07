@@ -141,7 +141,6 @@ if q == 1:
 
 
 
-print('dupa')
 
 
 
