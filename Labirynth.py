@@ -48,7 +48,18 @@ def move_player_in_direction(action,direction):
         heigth += 1
     elif action is "move" and direction is "up":
         heigth -= 1
-    realrows[heigth][width] = "#"
+    if realrows[heigth][width] != "%":
+        realrows[heigth][width] = "#"
+    else:
+        if action is "move" and direction is "right":
+            width -= 1
+        elif action is "move" and direction is "left":
+            width += 1
+        elif action is "move" and direction is "down":
+            heigth -= 1
+        elif action is "move" and direction is "up":
+            heigth += 1
+        realrows[heigth][width] = "#"
 
 # Funkcja rysujaca plansze gry
 def board():
