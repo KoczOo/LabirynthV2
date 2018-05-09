@@ -49,7 +49,7 @@ def move_player_in_direction(action,direction):
     elif action is "move" and direction is "up":
         heigth -= 1
     if realrows[heigth][width] != "%":
-        realrows[heigth][width] = "#"
+        realrows[heigth][width] = "⛄"
     else:
         if action is "move" and direction is "right":
             width -= 1
@@ -59,7 +59,7 @@ def move_player_in_direction(action,direction):
             heigth -= 1
         elif action is "move" and direction is "up":
             heigth += 1
-        realrows[heigth][width] = "#"
+        realrows[heigth][width] = "⛄"
 
 # Funkcja rysujaca plansze gry
 def board():
@@ -74,7 +74,7 @@ def board():
         wall_horizontal(3,15,30)
         wall_horizontal(5,0,20)
         wall_horizontal(8,3,18)
-        realrows[12][10] = "0"
+        realrows[12][10] = "☯"
         for s in realrows:
                 print(*s, sep = "")
 
@@ -114,7 +114,7 @@ while q:
             move_player_in_direction("move", "up")
         if user_input == "s":
             move_player_in_direction("move", "down")
-        if realrows[12][10] == "#":
+        if realrows[12][10] == "⛄":
             q = 0
             break
 
