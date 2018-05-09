@@ -10,7 +10,7 @@ width = 3
 realrows=[]
 
 for i in range (19):
-    realrows.append([" "]*31)
+    realrows.append([" "]*62)
 
 
 #Funkcja rysujaca poziome sciany
@@ -63,20 +63,20 @@ def move_player_in_direction(action,direction):
 
 # Funkcja rysujaca plansze gry
 def board():
-        wall_horizontal(0,0,30)
-        wall_horizontal(18,0,31)
+        wall_horizontal(0,0,60)
+        wall_horizontal(18,0,61)
         wall_vertical(0,0,18)
-        wall_vertical(0,30,18)
-        wall_horizontal(14,0,20)
-        wall_horizontal(10,15,15)
-        wall_vertical(2,12,13)
-        wall_horizontal(7,12,16)
-        wall_horizontal(3,15,15)
-        wall_horizontal(5,0,10)
-        wall_horizontal(8,3,9)
+        wall_vertical(0,60,18)
+        wall_horizontal(14,0,40)
+        wall_horizontal(10,15,30)
+        wall_vertical(2,25,13)
+        wall_horizontal(7,12,32)
+        wall_horizontal(3,15,30)
+        wall_horizontal(5,0,20)
+        wall_horizontal(8,3,18)
         realrows[12][10] = "0"
         for s in realrows:
-                print(*s)
+                print(*s, sep = "")
 
 # Funkcja zakonczenia gry
 def game_over():
