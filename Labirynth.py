@@ -3,8 +3,8 @@ import os, sys, curses, getch
 q = 1
 
 # Pozycja pionka(startowa)
-heigth = 16
-width = 3
+heigth = 2
+width = 2
 
 # Pole gry
 realrows=[]
@@ -86,7 +86,7 @@ def board(arg):
         wall_vertical(*arg[13])
         wall_vertical(*arg[14])
         wall_vertical(*arg[15])
-        realrows[12][10] = "☯"
+        realrows[16][2] = "☯"
         for s in realrows:
                 print(*s, sep = "")
 
@@ -94,24 +94,9 @@ def board(arg):
 def game_over():
     clear_screen()
     print(
-        """
-         _____      ___       ___  ___   _______
-        /  ___|    /   |     /   |/   | |   ____|
-        | |       /    |    / /|   /| | |  |__
-        | |  _   /  /| |   / / |__/ | | |   __|
-        | |_| | /  ___ |  / /       | | |  |____
-        \_____//_/   |_| /_/        |_| |_______|
-
-
-
-         _____    __    __  ______   _____
-        /  _  \  | |   / / | _____| |  _  |
-        | | | |  | |  / /  | |__    | |_| |
-        | | | |  | | / /   |  __|   |  _  /
-        | |_| |  | |/ /    | |____  | | |
-        \_____/  |___/     |______| |_|  \_
-
-        """
+    """    * * * * * * * * * * * * * * *
+    * * * * Y O U   W I N * * * *
+    * * * * * * * * * * * * * * * """
     )
 
 
@@ -126,7 +111,7 @@ while q:
             move_player_in_direction("move", "up")
         if user_input == "s":
             move_player_in_direction("move", "down")
-        if realrows[12][10] == "⛄":
+        if realrows[16][2] == "⛄":
             q = 0
             break
 
